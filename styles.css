@@ -178,10 +178,12 @@ nav {
 
     background-color: var(--background-color);
     border: 2px solid var(--background-color-secondary);
+
+    transition: margin-left 0.4s ease-out;
 }
 
 .theme-indicator.dark {
-    margin-left: auto;
+    margin-left: calc(100% - 20px);
 }
 
 /***************/
@@ -273,14 +275,101 @@ svg path {
     fill: var(--font-main);
 }
 
+/***************/
+/*             */
+/*   MY work   */
+/*             */
+/***************/
+
 .my-work {
     background: linear-gradient(rgba(250, 204, 21), rgba(250, 204, 21));
     background-repeat: no-repeat;
-    background-size: 30% 100%;
+    background-size: 20% 100%;
     background-position-y: 65px;
     background-position-x: 0;
 
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    overflow: visible;
+}
+
+.work-container {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.my-work-title {
+    margin-left: 5rem;
+    font-size: 4rem;
+    writing-mode: vertical-rl;
+    text-align: center;
+    transform: scale(-1);
+}
+
+.cards-container {
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--background-color-secondary);
+    color: var(--font-secondary);
+
+    transition: transform 0.4s ease-in;
+}
+
+.card:hover {
+    transform: scale(1.2);
+}
+
+.card img {
+    max-width: unset;
+    height: 120px;
+    object-fit: cover;
+}
+
+.card > div {
+    padding: 0 10px;
+    display: flex;
+}
+
+.card-icons {
+    display: flex !important;
+    gap: 10px;
+    align-items: center;
+}
+
+.card-icons svg {
+    width: 20px;
+    height: 20px;
+}
+
+.card-icons svg path {
+    fill: var(--font-secondary);
+}
+
+.card div h2 {
+    flex: 1;
+    font-size: 1rem;
+}
+
+.card p {
+    padding: 0 1rem 1rem;
+    font-size: 0.6rem;
 }
 
 .contact-me {
@@ -300,7 +389,7 @@ footer {
     bottom: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     nav,
     main,
     footer {
@@ -309,6 +398,21 @@ footer {
 
     .profile-container {
         justify-content: space-around;
+    }
+
+    .work-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .my-work-title {
+        margin-left: 0;
+
+        font-size: 2rem;
+        text-align: center;
+        writing-mode: unset;
+        text-align: center;
+        transform: scale(1);
     }
 }
 
