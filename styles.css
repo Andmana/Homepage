@@ -250,6 +250,7 @@ section {
 
 .profile-image h2 {
     position: absolute;
+    font-size: 3rem;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -312,6 +313,7 @@ svg path {
 
 .cards-container {
     flex: 1;
+    align-self: stretch;
 
     display: grid;
     grid-template-columns: repeat(auto-fill, 240px);
@@ -329,21 +331,19 @@ svg path {
     background-color: var(--background-color-secondary);
     color: var(--font-secondary);
 
+    box-shadow: -1px 11px 18px -6px var(--background-color-secondary);
+    -webkit-box-shadow: -1px 11px 18px -6px var(--background-color-secondary);
+    -moz-box-shadow: -1px 11px 18px -6px var(--background-color-secondary);
+
     transition: transform 0.4s ease-in;
 }
 
 .card:hover {
-    transform: scale(1.2);
-}
-
-.card img {
-    max-width: unset;
-    height: 120px;
-    object-fit: cover;
+    transform: scale(1.1);
 }
 
 .card > div {
-    padding: 0 10px;
+    padding: 0 1rem;
     display: flex;
 }
 
@@ -485,8 +485,21 @@ footer {
         align-items: center;
     }
 
+    .card {
+        box-shadow: -1px 20px 19px -6px var(--background-color-secondary);
+        -webkit-box-shadow: -1px 20px 19px -6px var(--background-color-secondary);
+        -moz-box-shadow: -1px 20px 19px -6px var(--background-color-secondary);
+    }
+
+    .card-icons svg {
+        width: 30px;
+        height: 30px;
+    }
+
     .card p {
-        margin-bottom: 2rem;
+        font-size: 0.9rem;
+        padding: 1rem;
+        margin-bottom: 3rem;
     }
 
     .about-me,
