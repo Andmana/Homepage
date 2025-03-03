@@ -71,15 +71,15 @@ h6 {
     font-family: "Montserrat";
     src: url("./assets/fonts/Montserrat-VariableFont_wght.ttf")
         format("truetype");
-    font-weight: 700; /* Bold weight */
     font-style: normal;
 }
 
-/* Other font weights can be added similarly */
-
-html,
-body {
-    scroll-behavior: smooth;
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url("./assets/fonts/Montserrat-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 900; /* Bold weight */
+    font-style: normal;
 }
 
 :root {
@@ -100,6 +100,7 @@ body {
     background-color: var(--background-color);
     color: var(--font-main);
     font-family: "Montserrat", sans-serif;
+    font-weight: 500;
 }
 
 .app {
@@ -125,6 +126,8 @@ footer {
 
     padding: 0 4rem;
     background-color: var(--background-color);
+
+    z-index: 1;
 }
 
 button {
@@ -192,18 +195,82 @@ main {
 }
 
 section {
-    /* min-height: 100vh; */
-    height: calc(100vh);
-    padding: 0 0 65px 0;
+    min-height: 100vh;
+    /* height: 100vh; */
+    padding: 65px 0;
     background-position-y: 65px;
 }
 
 .about-me {
     background: linear-gradient(rgb(248, 113, 113), rgb(248, 113, 113));
     background-repeat: no-repeat;
-    background-size: 50% 100%;
+    background-size: 40% 100%;
     background-position-y: 65px;
     background-position-x: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.profile-detail {
+    max-width: 600px;
+    flex-shrink: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.profile-detail h1 {
+    font-size: 2rem;
+}
+
+.profile-image {
+    max-width: 600px;
+    flex-shrink: 400px;
+
+    position: relative;
+}
+
+.profile-image picture img {
+    object-fit: cover;
+    max-height: 100vh;
+}
+
+.profile-image h2 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+}
+
+.profile-detail p {
+    text-align: justify;
+}
+
+.profile-icons {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+.profile-icons svg {
+    width: 30px;
+    height: 30px;
+}
+
+svg path {
+    fill: var(--font-main);
 }
 
 .my-work {
@@ -231,4 +298,34 @@ section {
 
 footer {
     bottom: 0;
+}
+
+@media (max-width: 900px) {
+    nav,
+    main,
+    footer {
+        padding: 0 2rem;
+    }
+
+    .profile-container {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 724px) {
+    nav,
+    main,
+    footer {
+        padding: 0 1rem;
+    }
+    main {
+        padding: 0;
+    }
+
+    .about-me,
+    .my-work,
+    .contact-me {
+        padding: 90px 1rem 65px;
+        background-size: 100% 100%;
+    }
 }
