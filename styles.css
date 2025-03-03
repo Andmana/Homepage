@@ -1,0 +1,218 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/***************/
+/*             */
+/*   MY CODE   */
+/*             */
+/***************/
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background-color: white;
+    --background-color-secondary: rgb(39, 39, 42);
+    --font-main: black;
+    --font-secondary: white;
+}
+
+:root.dark {
+    --background-color: rgb(39, 39, 42);
+    --background-color-secondary: white;
+    --font-main: white;
+    --font-secondary: black;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--font-main);
+}
+
+.app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+    color: var(--font-main);
+    background-color: var(--background-color);
+}
+
+nav,
+footer {
+    position: fixed;
+    height: 65px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 4rem;
+    background-color: var(--background-color);
+}
+
+button {
+    all: unset; /* Resets all default button styles */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Ensures pointer cursor */
+}
+
+/***************/
+/*             */
+/*     NAV     */
+/*             */
+/***************/
+
+nav {
+    top: 0;
+}
+
+.hero {
+    flex: 1;
+}
+
+.theme-button {
+    width: 47px;
+    height: 22px;
+    border-radius: 20px;
+
+    padding: 1px;
+    background-color: var(--background-color-secondary);
+
+    transition: background-color 0.4s ease-in;
+}
+
+.theme-button:hover {
+    background-color: rgb(248, 113, 113);
+}
+
+.theme-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+
+    background-color: var(--background-color);
+}
+
+.theme-indicator.dark {
+    margin-left: auto;
+}
+
+/***************/
+/*             */
+/*   SECTION   */
+/*             */
+/***************/
+
+main {
+    padding: 0 4rem;
+}
+
+section {
+    /* min-height: 100vh; */
+    height: calc(100vh);
+    padding: 0 0 65px 0;
+    background-position-y: 65px;
+}
+
+.about-me {
+    background: linear-gradient(rgb(248, 113, 113), rgb(248, 113, 113));
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    background-position-y: 65px;
+    background-position-x: 0;
+}
+
+.my-work {
+    background: linear-gradient(rgba(250, 204, 21), rgba(250, 204, 21));
+    background-repeat: no-repeat;
+    background-size: 30% 100%;
+    background-position-y: 65px;
+    background-position-x: 0;
+
+    overflow: hidden;
+}
+
+.contact-me {
+    background: linear-gradient(rgba(14, 165, 233), rgba(14, 165, 233));
+    background-repeat: no-repeat;
+    background-size: 20% 100%;
+    background-position: right 65px;
+}
+
+/***************/
+/*             */
+/*   FOOTER    */
+/*             */
+/***************/
+
+footer {
+    bottom: 0;
+}
