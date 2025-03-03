@@ -372,11 +372,48 @@ svg path {
     font-size: 0.6rem;
 }
 
+/***************/
+/*             */
+/*  CONTACT ME */
+/*             */
+/***************/
+
 .contact-me {
     background: linear-gradient(rgba(14, 165, 233), rgba(14, 165, 233));
     background-repeat: no-repeat;
     background-size: 20% 100%;
     background-position: right 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-me-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-detail {
+    align-self: stretch;
+    text-align: end;
+    min-width: 400px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.contact-detail h1 {
+    font-size: 3rem;
+}
+
+.image-container {
+    max-width: 600px;
 }
 
 /***************/
@@ -414,6 +451,21 @@ footer {
         text-align: center;
         transform: scale(1);
     }
+
+    .contact-me-container {
+        height: unset;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .contact-detail {
+        padding: 0 1rem;
+        text-align: start;
+    }
+
+    .contact-detail .profile-icons {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 724px) {
@@ -424,6 +476,17 @@ footer {
     }
     main {
         padding: 0;
+    }
+
+    .cards-container {
+        display: grid; /* Enable grid layout */
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card p {
+        margin-bottom: 2rem;
     }
 
     .about-me,
